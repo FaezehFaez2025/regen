@@ -30,7 +30,8 @@ First, we do multiple epochs of CE fine-tuning starting from a `large` T5 model 
 **Prerequisites**: Before starting CE training, make sure to install the following code:
 ```
 cd eval && git clone https://github.com/WebNLG/WebNLG-Text-to-triples.git
-cd ..
+cd WebNLG-Text-to-triples && patch Evaluation_script.py ../Evaluation_script.py.patch
+cd ../..
 cd corpora && git clone https://gitlab.com/shimorina/webnlg-dataset.git
 cd ..
 ```
