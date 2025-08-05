@@ -310,7 +310,8 @@ if __name__ == "__main__":
 
     # add more arguments:
     # distributed args
-    p.add("--local_rank", type=int, default=-1, help="rank process ID")
+    p.add("--local-rank", type=int, default=-1, dest="local_rank", help="rank process ID")
+    p.add("--local_rank", type=int, default=-1, dest="local_rank", help="rank process ID")
     p.add("--world_size", type=int, default=-1, help="number of processes")
 
     args = p.parse_args()
