@@ -31,6 +31,8 @@ First, we do multiple epochs of CE fine-tuning starting from a `large` T5 model 
 ```
 cd eval && git clone https://github.com/WebNLG/WebNLG-Text-to-triples.git
 cd ..
+cd corpora && git clone https://gitlab.com/shimorina/webnlg-dataset.git
+cd ..
 ```
 
 For CE fine-tuning of our `large` T5 PLM, please use:
