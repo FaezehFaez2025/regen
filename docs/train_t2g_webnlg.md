@@ -27,6 +27,12 @@ First, we do multiple epochs of CE fine-tuning starting from a `large` T5 model 
 
 ## CE Fine-tuning
 
+**Prerequisites**: Before starting CE training, make sure to install the following code:
+```
+cd eval && git clone https://github.com/WebNLG/WebNLG-Text-to-triples.git
+cd ..
+```
+
 For CE fine-tuning of our `large` T5 PLM, please use:
 ```
 export CUDA_VISIBLE_DEVICES=0 && bash ./scripts/train.webnlg.t2g.ce.sh -j 1
