@@ -41,6 +41,20 @@ conda activate regen
 pip install --user 'nltk>=3.6.3'
 ```
 
+**Important**: If you encounter PyTorch compatibility issues, uninstall the previous version and install the working version:
+```
+conda activate regen
+pip uninstall torch torchvision torchaudio -y
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+```
+
+Install additional required dependencies:
+```
+conda activate regen
+pip install scikit-learn beautifulsoup4==4.9.3 nervaluate
+python -c "import nltk; nltk.download('punkt')"
+```
+
 Note: we assume in this documentation that you have activated the conda environment by using:
 ```
 conda activate regen
