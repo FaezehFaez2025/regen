@@ -28,6 +28,9 @@ First, we do multiple epochs of CE fine-tuning starting from a `large` T5 model 
 ## CE Fine-tuning
 
 For CE fine-tuning of our `large` T5 PLM, please use:
+```
+export CUDA_VISIBLE_DEVICES=0 && bash ./scripts/train.webnlg.t2g.ce.sh -j 1
+```
 
 ```
 bash ./scripts/train.webnlg.t2g.ce.sh -j  1  # epoch 1
