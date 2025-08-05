@@ -54,5 +54,5 @@ then
     exit 1
 fi
 
-bash ./scripts/train.sh -j $job_id -d webnlg -x t2g
+bash ./scripts/train.sh -j $job_id -d webnlg -x t2g -t ce
 popd > /dev/null
