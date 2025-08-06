@@ -52,12 +52,19 @@ def get_state(args):
        Do we start from a previous checkpoint?
        if jid = 1 : no, returns empty dict and None for state path
        if jid > 1 : yes, from state.${jid-1}.pkl returns state dict and state path
+       if scst is True: load from scst_checkpoint_id instead of jid-1
     '''
     state = {}
 
     if args.jid > 1:  # start from previous
 
-        prev_id = args.jid - 1
+        # For SCST training, use the specified checkpoint ID
+        if hasattr(args, 'scst') and args.scst and hasattr(args, 'scst_checkpoint_id') and args.scst_checkpoint_id > 0:
+            prev_id = args.scst_checkpoint_id
+            log.info(f'# SCST: loading from checkpoint {prev_id}')
+        else:
+            prev_id = args.jid - 1
+            
         state_path = os.path.join(args.checkpoint_dir, f'state.{prev_id}.pkl')
 
         if os.path.exists(state_path):
