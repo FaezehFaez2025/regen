@@ -53,6 +53,7 @@ Install additional required dependencies:
 conda activate regen
 pip install scikit-learn beautifulsoup4==4.9.3 nervaluate
 python -c "import nltk; nltk.download('punkt')"
+python -c "import nltk; nltk.download('punkt_tab')"
 ```
 
 Note: we assume in this documentation that you have activated the conda environment by using:
